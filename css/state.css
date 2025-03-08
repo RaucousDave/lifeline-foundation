@@ -1,0 +1,21 @@
+button:active,
+a:active,
+.icon:active {
+  transform: scale(0.8);
+}
+.navlinks:hover::before {
+  width: 100%;
+  transform: translateX(0%);
+}
+a.btn:hover {
+  background-color: hsl(11, 100%, 31%);
+}
+.icon:hover {
+  background: #d12800;
+}
+.icon svg.rotated {
+  transform: rotate(180deg);
+}
+.icon svg:hover {
+  color: white;
+}

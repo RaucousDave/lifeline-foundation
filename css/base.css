@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-gradient-1: linear-gradient(to right, #eae0d5, #f5f5f5);
+  --bg-gradient-2: linear-gradient(to right, #1e456e, #2b5c99);
+}
+body {
+  height: 100vh;
+}
+h1,
+h2,
+h3 {
+  font-family: "IBM Plex Sans";
+}
+img,
+svg {
+  height: auto;
+  width: 100%;
+}
+h4,
+h5,
+h6,
+p,
+a,
+li {
+  font-family: "Inter";
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+button,
+a {
+  will-change: transform;
+  transition: transform 300ms ease;
+}
+.icon {
+  font-size: 0.05rem;
+}
