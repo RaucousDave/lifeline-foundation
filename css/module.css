@@ -76,3 +76,8 @@
 .icon svg {
   transition: transform 0.3s ease-in-out;
 }
+@media (max-width: 576px) {
+  .project-card {
+    width: 100%;
+  }
+}

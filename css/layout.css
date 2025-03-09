@@ -1,22 +1,21 @@
-header {
-  /* background-color: hsl(0, 0%, 98%); */
-  background: linear-gradient(to right, #2b5c99, #3a6ea5);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
+nav {
+  position: relative;
 }
+
 .navlinks {
   position: relative;
   color: hsl(0, 0%, 93%);
   margin: 0 10px;
   font-size: 14px;
   will-change: width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .navlinks::before {
   content: "";
   position: absolute;
-  top: 1.3rem;
+  top: 1.5rem;
   bottom: 0;
   left: 0;
   height: 2px;
@@ -25,19 +24,117 @@ header {
   transform: translateX(-100%);
   transition: all 500ms ease-in-out;
 }
-.btn-container {
-  padding-top: 5px;
+nav {
+  background: var(--bg-gradient-2);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
 }
-header a.btn {
+nav.logo {
+  width: 50%;
+}
+nav ul {
+  width: 65%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav li {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu {
+  display: none;
+}
+li a.btn {
+  height: 70%;
+}
+a.btn {
+  padding: 10px 15px;
   background-color: #d12800;
-  font-size: 14px;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background: var(--bg-gradient-2);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  padding-left: 10px;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(500%);
+}
+
+/* Slide it in when active */
+.sidebar.active {
+  transform: translateX(0);
+}
+/* Sidebar links */
+.sidebar li {
+  /* padding: 15px; */
+  list-style: none;
+}
+.sidebar .btn {
+  padding: 10px 15px;
+  /* height: 200%; */
+  margin-top: 30px;
+  border-radius: 3px;
+}
+/* Button to toggle sidebar */
+.menu-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+.button-toggle {
+  z-index: 1000;
+}
+.button-toggle .close {
+  display: none;
+}
+.button-toggle .close.active {
+  display: flex;
+  z-index: 1000;
+}
+.button-toggle.rotate {
+  transform: rotate(360deg);
+}
+.sidebar.active {
+  display: flex;
+  opacity: 1;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding-top: 3rem;
+  transform: translateX(0%);
+  right: 0;
+}
+.close {
+  width: 30px;
+  height: 30px;
+}
+.sidebar a {
+  width: 100%;
 }
 .logo {
   width: 10%;
-}
-header nav ul {
-  display: flex;
-  align-items: baseline;
 }
 #hero {
   height: 100%;
@@ -46,18 +143,21 @@ header nav ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   align-items: center;
   padding: 10px 15px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../assets/hero-bg.avif);
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: -10;
 }
 .hero-container a.btn {
   background-color: #d12800;
   padding: 15px 25px;
   font-size: 1rem;
+  z-index: 0;
 }
 .hero-container h1,
 .hero-container p {
@@ -67,12 +167,13 @@ header nav ul {
 .hero-container h1 {
   font-size: 2.7rem;
   font-weight: 900;
-  /* text-transform: uppercase; */
   text-align: center;
+}
+#projects {
+  background: linear-gradient(to right, #1e456e, #2b5c99);
 }
 .projects-container {
   padding: 50px 15px 10px;
-  background: linear-gradient(to right, #1e456e, #2b5c99);
 }
 .projects-container .title {
   color: white;
@@ -85,4 +186,35 @@ header nav ul {
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 40px;
+}
+
+@media (max-width: 576px) {
+  .hero-container {
+    background-position: center;
+  }
+  .hero-container p {
+    text-align: center;
+  }
+  .hero-container h1 {
+    font-size: 2rem;
+  }
+  .card-container {
+    padding: 10px 15px;
+  }
+  .projects-container {
+    padding: 10px;
+  }
+  .project-card {
+    width: 100%;
+  }
+  .menu {
+    display: flex;
+  }
+  .hideOnMobile {
+    display: none;
+  }
+  nav {
+    padding: 10px 15px;
+    position: sticky;
+  }
 }

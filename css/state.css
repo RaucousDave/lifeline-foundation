@@ -19,3 +19,6 @@ a.btn:hover {
 .icon svg:hover {
   color: white;
 }
+.sidebar.active {
+  display: flex;
+}
