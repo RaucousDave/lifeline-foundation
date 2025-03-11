@@ -1,7 +1,15 @@
 nav {
   position: relative;
 }
-
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  padding: 10px 20px;
+}
 .navlinks {
   position: relative;
   color: hsl(0, 0%, 93%);
@@ -187,7 +195,28 @@ nav li:first-child {
   flex-wrap: wrap;
   gap: 40px;
 }
+.footer-container {
+  background: var(--bg-gradient-2);
+  padding: 2rem 1rem 1.5rem;
+}
+.footer-container h1,
+.footer-container p {
+  color: white;
+  margin: 10px;
+}
 
+.footer-container h1 {
+  margin: 20px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-rights {
+  margin-top: 1rem;
+  text-align: center;
+}
 @media (max-width: 576px) {
   .hero-container {
     background-position: center;

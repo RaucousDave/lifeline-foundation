@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Lifeline Foundation</title>
+    <style>
+      /* Basic CSS for styling */
+      .about-section {
+        padding: 20px;
+      }
+      .team-member {
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+      }
+      .team-member img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .team-member:hover img {
+        transform: scale(1.1); /* Scale up on hover */
+      }
+      .content {
+        display: none; /* Initially hide content */
+        margin-top: 10px;
+      }
+      .clickable {
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+      }
+      .clickable:hover {
+        color: darkblue; /* Change color on hover */
+        text-decoration: none; /* Remove underline on hover */
+      }
+      .partner-logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+      }
+      .partner-logo:hover {
+        transform: scale(1.1);
+      }
+      .img {
+        width: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="about-section">
+      <h1>About Us</h1>
+
+      <div class="mission">
+        <h2 class="clickable">Mission</h2>
+        <div class="content">
+          <p>
+            Our mission is to provide support and resources to those in need.
+          </p>
+        </div>
+      </div>
+
+      <div class="history">
+        <h2 class="clickable">History and Background</h2>
+        <div class="content">
+          <p>Lifeline Foundation was founded in 2025 by Frontline Devs.</p>
+          <p>Our story is built on the commitment to make a difference.</p>
+        </div>
+      </div>
+      <div class="team">
+        <h2 class="clickable">Team Members</h2>
+        <div class="content">
+          <div class="team-member">
+            <img src="my.png" alt="Team Member 1" />
+            <h3>John Uwe</h3>
+          </div>
+          <div class="team-member">
+            <img src="davies.jpg" alt="Team Member 2" />
+            <h3>Davies Enienghan</h3>
+          </div>
+          <div class="team-member">
+            <img src="emem.jpg" alt="Team Member 2" />
+            <h3>Emem Patrusm</h3>
+          </div>
+          <div class="team-member">
+            <img src="kuyik.jpg" alt="Team Member 2" />
+            <h3>Kuyik Bassey</h3>
+          </div>
+          <!-- Add more team members as needed -->
+        </div>
+      </div>
+
+      <div class="partners">
+        <h2 class="clickable">Partners and Collaborators</h2>
+        <div class="content">
+          <p>We are proud to partner with:</p>
+          <ul>
+            <img src="undp.svg" alt="undp" class="partner-logo" />
+            <!-- Add more partners as needed -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".clickable").forEach((item) => {
+        item.addEventListener("click", () => {
+          const content = item.nextElementSibling;
+          if (
+            content.style.display === "none" ||
+            content.style.display === ""
+          ) {
+            content.style.display = "block"; // Show content
+          } else {
+            content.style.display = "none"; // Hide content
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

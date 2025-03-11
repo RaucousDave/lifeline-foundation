@@ -51,20 +51,28 @@ const hideSideBar = () => {
   menu.style.display = "flex";
 };
 
-const scale_up = document.querySelectorAll(".scale-up");
+const headings = document.querySelectorAll("h1");
+const paragraphs = document.querySelectorAll("p");
+const smallheaders = document.querySelectorAll("h3");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(
       `Section ${entry.target.id} isIntersecting: ${entry.isIntersecting}`
     );
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target); // Only stop observing after it's been shown
+      entry.target.classList.toggle("scale-up");
+      // observer.unobserve(entry.target); // Only stop observing after it's been shown
     }
   }),
     {
-      threshold: 0.1,
+      threshold: 1,
     };
 });
 
-scale_up.forEach((scale) => [observer.observe(scale)]);
+headings.forEach((heading) => [observer.observe(heading)]);
+paragraphs.forEach((paragraph) => {
+  observer.observe(paragraph);
+});
+smallheaders.forEach((smallheader) => {
+  observer.observe(smallheader);
+});
